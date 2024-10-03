@@ -17,7 +17,7 @@ inline void move(char A, char B, char C, int d) // Move the top d layers of A to
 
 signed main()
 {
-    move('A', 'B', 'C', 4);
+    move('A', 'B', 'C', 64);
 
     return 0;
 }
