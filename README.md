@@ -18,7 +18,7 @@
 
 ### IDE: 
 
-- [CLion](https://www.jetbrains.com/clion/) (唯一指定没得选)
+- [VSCode](https://code.visualstudio.com/Download) (唯一指定没得选)
 
 ### C语言参考：
 
