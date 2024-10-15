@@ -16,20 +16,27 @@ class Linked_list
 
 	inline void Reverse(unit *p)
 	{
-		if (p -> nex == null) return;
+		if (p == t) return;
 		Reverse(p -> nex);
 		p -> nex -> nex = p;
 	}
 	
-	inline unit* Find_5(unit *p)
+	inline int Find_5(unit *p, int i)
 	{
-		p = h;
-		while (p != null)
+		while (p != t)
 		{
-			if (p -> val == 5) return p;
-			p = p -> nex;
+			if (i && p -> val == 5) return i;
+			p = p -> nex, ++i;
 		}
-		return null;
+		return -1;
+	}
+
+	inline void Insert(unit *p, int i, int val)
+	{
+		if (i > 1) return Insert(p -> nex, i - 1, val);
+		unit *q = new unit {val, null};
+		q -> nex = p -> nex;
+		p -> nex = q;
 	}
 
 	public :
@@ -37,19 +44,14 @@ class Linked_list
 	{
 		null = new unit {0, 0};
 		null -> nex = null;
-		h = t = null;
+		h = new unit {0, null};
+		t = new unit {0, null};
+		h -> nex = t;
 	}
 
-	inline void Insert(int val, int id)
+	inline void Insert(int i, int val)
 	{
-		if (t == null) h = t = new unit {val, null};
-		else t -> nex = new unit {val, null}, t = t -> nex;
-	}
-
-	inline void Initialize(size_t N)
-	{
-		for (re int i = 1, x; i <= N; ++i)
-			cin >> x, Insert(x, i);
+		Insert(h, i, val);
 	}
 	
 	inline void Reverse()
@@ -59,14 +61,14 @@ class Linked_list
 		swap(h, t);
 	}
 
-	inline unit* Find_5()
+	inline int Find_5()
 	{
-		return Find_5(h);
+		return Find_5(h, 0);
 	}
 
-	inline unit* Find_nex_5(unit *p)
+	inline int Find_nex_5(int i)
 	{
-		return Find_5(p);
+		return Find_5(h, -i) + i;
 	}
 };
 
@@ -76,8 +78,18 @@ signed main()
 	cin.tie(nullptr);
 
 	// Linked_list lst;
-	// lst.Initialize(5);
-	// cout << lst.Find_5() -> val << '\n';
+	// lst.Insert(1, 1);
+	// lst.Insert(2, 2);
+	// lst.Insert(3, 3);
+	// lst.Insert(4, 4);
+	// lst.Insert(5, 5);
+	// lst.Insert(6, 1);
+	// lst.Insert(7, 5);
+	// cout << lst.Find_5() << '\n';
+	// cout << lst.Find_nex_5(lst.Find_5()) << '\n';
+	// lst.Reverse();
+	// cout << lst.Find_5() << '\n';
+	// cout << lst.Find_nex_5(lst.Find_5()) << '\n';
 
     return 0;
 }
