@@ -9,8 +9,8 @@
 ## 基本操作流程
 
 1. 从 https://github.com/luckymark/c2024-a fork 到你自己的 Github 账号中
-2. 在Clion中打开项目
-   1. 在Clion中注册github账号 https://www.jetbrains.com/help/clion/github.html 
+2. 在VSCode中打开项目
+   1. 在VSCode中注册github账号 https://www.jetbrains.com/help/clion/github.html 
    2. 打开github中的项目 https://www.jetbrains.com/help/clion/manage-projects-hosted-on-github.html 
 3. 修改、提交代码：https://www.jetbrains.com/help/clion/using-git-integration.html
 
